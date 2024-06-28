@@ -11,7 +11,7 @@ provider "random" {}
 
 module "names" {
   source      = "../"
-  name_length = 12
+  name_length = 16
 }
 
 output "result" {
