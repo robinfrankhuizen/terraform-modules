@@ -42,7 +42,12 @@ jobs:
 
     - name: Get latest tag
       run: |
-        latest=$(git tag -l names/* | sort -rV | head -n1)
+        latest=$(git tag -l namesaaaa/* | sort -rV | head -n1)
+
+        if [ -z "${latest}" ]; then
+          latest="names/v0.0.0"
+        fi
+
         echo $latest
 
     # - name: Git tag
