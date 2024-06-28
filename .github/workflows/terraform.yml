@@ -39,8 +39,7 @@ jobs:
       run: terraform plan -input=false
 
     - name: Get latest tag
-      run: |
-        git tag | sort -rV | head -n1
+      run: git tag | sort -rV | head -n1
 
     # - name: Git tag
     #   run: |
