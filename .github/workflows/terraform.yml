@@ -40,8 +40,7 @@ jobs:
 
     - name: Get latest tag
       run: |
-        echo "why no work"
-        # git tag | sort -rV | head -n1
+        git tag | sort -rV | head -n1
 
     # - name: Git tag
     #   run: |
