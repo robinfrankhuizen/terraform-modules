@@ -40,8 +40,10 @@ jobs:
 
     - name: Get latest tag
       run: |
-        latest=$(git tag | sort -rV | head -n1)
+        latest="v0.0.1"
         echo $latest
+        # latest=$(git tag | sort -rV | head -n1)
+        # echo $latest
 
     # - name: Git tag
     #   run: |
