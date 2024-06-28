@@ -3,7 +3,7 @@ name: 'Build names module'
 on:
   push:
     paths:
-      - names/
+      - names/**
   #   branches: [ "main" ]
   # pull_request:
 
