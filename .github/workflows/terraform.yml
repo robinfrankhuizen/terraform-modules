@@ -1,7 +1,9 @@
-name: 'Terraform'
+name: 'Build names module'
 
 on:
   push:
+    paths:
+      - names/
   #   branches: [ "main" ]
   # pull_request:
 
