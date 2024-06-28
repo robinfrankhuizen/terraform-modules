@@ -1,6 +1,7 @@
 name: 'Build names module'
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - names/**
@@ -36,11 +37,15 @@ jobs:
 
     - name: Terraform plan
       run: terraform plan -input=false
-    
-    - name: Git tag
+
+    - name: Get latest tag
       run: |
-        git tag names/v0.0.3
-        git push origin tag names/v0.0.3
+        git tag | sort -rV | head -n1
+
+    # - name: Git tag
+    #   run: |
+    #     git tag names/v0.0.3
+    #     git push origin tag names/v0.0.3
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
