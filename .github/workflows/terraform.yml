@@ -39,7 +39,9 @@ jobs:
       run: terraform plan -input=false
 
     - name: Get latest tag
-      run: git tag #| sort -rV | head -n1
+      run: |
+        $latest=$(git tag | sort -rV | head -n1)
+        echo $latest
 
     # - name: Git tag
     #   run: |
