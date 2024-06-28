@@ -8,8 +8,8 @@ on:
   #   branches: [ "main" ]
   # pull_request:
 
-permissions:
-  contents: write
+# permissions:
+#   contents: write
 
 jobs:
   terraform:
